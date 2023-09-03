@@ -19,7 +19,7 @@ jobs:
         with:
           operation: get
           region: us-east-1
-          table: my-awesome-config
+          table: devops-odin-test
           key: |
             { key: "teste-01" }
       - name: Print item
