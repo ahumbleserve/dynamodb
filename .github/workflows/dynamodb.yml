@@ -1,1 +1,27 @@
 
+name: DynamoDB
+on:
+  workflow_dispatch: 
+     
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Get DynamoDB Item
+        id: config
+        uses: mooyoul/dynamodb-actions@v1.2.1
+        env:
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        with:
+          operation: get
+          region: us-east-1
+          table: my-awesome-config
+          key: |
+            { key: "teste-01" }
+      - name: Print item
+        run: |
+          echo '${{ steps.config.outputs.item }}'
