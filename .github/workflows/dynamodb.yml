@@ -20,7 +20,7 @@ jobs:
           operation: get
           region: us-east-1
           table: devops-odin-test
-          key: |
+          item: |
             { 
               key: "test-01",
               value: "wow",
