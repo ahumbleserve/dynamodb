@@ -23,9 +23,8 @@ jobs:
           item: |
             { 
               key: "test-01",
-              value: "wow",
-              awesome: "true",
-              stars: 12345
+              value: "wowa"
+              
             }
       
       
